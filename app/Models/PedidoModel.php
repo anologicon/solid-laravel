@@ -59,7 +59,7 @@ class PedidoModel extends Model
 
             $this->modificarStatus(PedidoStatusEnum::CONFIRMADO);
             
-            $this->modificarValor($this->carrinho->calcularTotal());
+            $this->setValor($this->carrinho->calcularTotal());
 
             return true;
         }
@@ -72,7 +72,7 @@ class PedidoModel extends Model
         return $this->carrinho;
     }
     
-    private function modificarValor(float $valor): void
+    private function setValor(float $valor): void
     {
         $this->valor = $valor;
     }

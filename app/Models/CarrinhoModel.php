@@ -37,7 +37,7 @@ class CarrinhoModel extends Model
         $valor = 0;
 
         foreach ($this->listarItens() as  $item) {
-            $valor += $item->exibirValor();
+            $valor += $item->getValor();
         }
 
         return $valor;

@@ -28,16 +28,16 @@ class CarrinhoController extends Controller
         $pedido = new PedidoModel();
 
         $item1 = new ItemModel();
-        $item1->adicionarDescricao("Play Station 5");
-        $item1->modificarValor(5000.00);
+        $item1->setDescricao("PlayStation 5");
+        $item1->setValor(5000.00);
 
         $item2 = new ItemModel();
-        $item2->adicionarDescricao("Xbox Series S");
-        $item2->modificarValor(3000.00);
+        $item2->setDescricao("Xbox Series S");
+        $item2->setValor(3000.00);
 
         $item3 = new ItemModel();
-        $item3->adicionarDescricao("Xbox Series X");
-        $item3->modificarValor(0);
+        $item3->setDescricao("Xbox Series X");
+        $item3->setValor(0);
 
         $pedido->recuperarCarrinho()->adicionarItem($item1);
         $pedido->recuperarCarrinho()->adicionarItem($item2);
@@ -45,11 +45,7 @@ class CarrinhoController extends Controller
 
         if($pedido->confirmar()) { 
             $this->emailService->dispararEmail();
-        } else {
-            dd("Erro ao confirmar");
         }
-
-        dd("Confirmado");
 
         return $pedido;
     }

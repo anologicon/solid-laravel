@@ -12,33 +12,33 @@ class ItemModel extends Model
 
     public function __consruct()
     {
-        $this->descricao = null;
-        $this->valor = 0;
+        $this->descricao = "";
+        $this->valor = (float) 0.0;
     }
 
-    public function adicionarDescricao(string $descricao): void
+    public function setDescricao(string $descricao): void
     {
         $this->descricao = $descricao;
     }
 
-    public function exibirDescricao(): string
+    public function getDescricao(): string
     {
         return $this->descricao;
     }
 
-    public function modificarValor(float $valor): void
+    public function setValor(float $valor): void
     {
         $this->valor = $valor;
     }
 
-    public function exibirValor(): float
+    public function getValor(): float
     {
         return $this->valor;
     }
 
     public function validar(): bool
     {
-        if (!$this->descricao) {
+        if ($this->descricao === "") {
             return false;
         }
 
