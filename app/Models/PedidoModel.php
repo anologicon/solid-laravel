@@ -52,7 +52,6 @@ class PedidoModel extends Model
         $this->status = $status;
     }
 
-
     public function confirmar(): bool
     {
         if ($this->validar()) {

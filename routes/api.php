@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/carrinho', 'CarrinhoController@index');
+Route::get('/poligono', 'PoligonoController@index');
