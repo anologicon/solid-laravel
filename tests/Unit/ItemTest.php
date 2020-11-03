@@ -52,7 +52,7 @@ class ItemTest extends TestCase
         ];
     }
 
-    public function testItemValidar($valor, $descricao, $esperado)
+    public function testItemValidar()
     {
         $itemValido = new ItemModel();
 
